@@ -1,8 +1,4 @@
-# helloworld
-
-AstrBot 插件模板
-
-A template plugin for AstrBot plugin feature
+# CNKD言论管控插件
 
 # 支持
 
