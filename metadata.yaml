@@ -1,6 +1,6 @@
-name: helloworld # 插件唯一识别名，以 astrbot_plugin_ 前缀开头
-display_name: helloworld # 用于展示的名字，可以是方便人类阅读的名字（需要版本 >= v4.5.0，低版本不会报错，请放心填写）
-desc: AstrBot 插件示例。 # 插件简短描述
-version: v1.3.0 # 插件版本号。格式：v1.1.1 或者 v1.1
-author: Soulter # 作者
-repo: https://github.com/Soulter/helloworld # 插件的仓库地址
+name: astrbot_plugin_CNKD_Admin
+display_name: UapiPro言论管控
+desc: 调用免费的敏感词审核接口监测群聊发言 管理员权限可阶梯式禁言 下载即用 支持白名单控制 支持配置管理员私信提示 6W+正则匹配词库 支持自定义敏感词（优先级高于API监测）
+version: v0.1.0
+author: CNKD-Yichex
+repo: https://github.com/YiChex/astrbot_plugin_CNKD_Admin
