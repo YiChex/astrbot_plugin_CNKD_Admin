@@ -17,6 +17,69 @@
     "default": "https://uapis.cn/api/v1/text/profanitycheck",
     "hint": "敏感词检测API地址"
   },
+  "api_rate_limit": {
+    "description": "API调用频率限制",
+    "type": "object",
+    "hint": "限制API调用频率，避免超过限制",
+    "items": {
+      "max_calls_per_minute": {
+        "description": "每分钟最大调用次数",
+        "type": "int",
+        "default": 60,
+        "hint": "避免API调用过于频繁，建议根据API提供商限制设置"
+      },
+      "max_calls_per_hour": {
+        "description": "每小时最大调用次数",
+        "type": "int",
+        "default": 1000,
+        "hint": "小时级限制，防止突发大量调用"
+      }
+    }
+  },
+  "cache_config": {
+    "description": "消息缓存配置",
+    "type": "object",
+    "hint": "配置消息内容缓存，减少重复API调用",
+    "items": {
+      "cache_ttl": {
+        "description": "缓存有效期（秒）",
+        "type": "int",
+        "default": 3600,
+        "hint": "相同内容在多长时间内不再重复检测"
+      },
+      "max_cache_size": {
+        "description": "最大缓存条目数",
+        "type": "int",
+        "default": 10000,
+        "hint": "缓存的最大消息条目数"
+      }
+    }
+  },
+  "retry_config": {
+    "description": "重试策略配置",
+    "type": "object",
+    "hint": "API调用失败时的重试策略",
+    "items": {
+      "max_retries": {
+        "description": "最大重试次数",
+        "type": "int",
+        "default": 3,
+        "hint": "API调用失败时重试的次数"
+      },
+      "base_delay": {
+        "description": "基础延迟时间（秒）",
+        "type": "float",
+        "default": 1.0,
+        "hint": "第一次重试前的等待时间"
+      },
+      "max_delay": {
+        "description": "最大延迟时间（秒）",
+        "type": "float",
+        "default": 30.0,
+        "hint": "重试之间的最大等待时间"
+      }
+    }
+  },
   "group_notice_enabled": {
     "description": "是否在群内发送敏感词提醒",
     "type": "bool",
